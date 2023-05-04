@@ -9,6 +9,7 @@ class Zahlenraten():
         self.computer_zahl: int = random.randint(1000, 9999)
         self.bereits_gewonnen: bool = False
         self.versuche: int = 0
+        self.geratene_zahl_liste: list[int] = []
 
     # zählt die versuche, schaut ob bereits gewonnen
     # legt die lsten für die beidenen jewaligen zahlen an
@@ -57,3 +58,11 @@ class Zahlenraten():
     def zahl_als_ziffern_liste(self, zahl: int) -> list[int]:
 
         return list(map(int, str(zahl)))
+
+    def wie_viele_stimmen_ueber_ein(self) -> int:
+        count: int = 0
+        for element in self.geratene_zahl_liste:
+            if element in self.computer_zahl_liste:
+                count += 1
+
+        return count

@@ -49,6 +49,34 @@ class TestZahlenRaten(unittest.TestCase):
             zr.raten(1324)
             self.assertEqual(zr.passende_stellen(), [0, 3])
 
+    def test_nichts_raten(self):
+        with mock.patch("random.randint", return_test_number):
+            zr = Zahlenraten()
+            self.assertEqual(zr.passende_stellen(), [])
+
+    def test_wie_viel_stimmt_ueber_ein(self):
+        with mock.patch("random.randint", return_test_number):
+            zr = Zahlenraten()
+            zr.raten(4321)
+            self.assertEqual(zr.wie_viele_stimmen_ueber_ein(), 4)
+
+    def test_vergessen_zu_raten(self):
+        with mock.patch("random.randint", return_test_number):
+            zr = Zahlenraten()
+            self.assertEqual(zr.wie_viele_stimmen_ueber_ein(), 0)
+
+    def test_keine_uebereinstimmung(self):
+        with mock.patch("random.randint", return_test_number):
+            zr = Zahlenraten()
+            zr.raten(0000)
+            self.assertEqual(zr.wie_viele_stimmen_ueber_ein(), 0)
+
+    def test_eine_uebereinstimmung(self):
+        with mock.patch("random.randint", return_test_number):
+            zr = Zahlenraten()
+            zr.raten(1000)
+            self.assertEqual(zr.wie_viele_stimmen_ueber_ein(), 1)
+
 
 if __name__ == "__main__":
     unittest.main()
