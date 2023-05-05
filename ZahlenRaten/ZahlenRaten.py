@@ -42,6 +42,8 @@ class Zahlenraten():
     # (beachte in PYthon wird mit 0 angefangen 0 ist die erste Stelle)
 
     def passende_stellen(self) -> list[int]:
+        if self.geratene_zahl_liste == [0]:
+            self.geratene_zahl_liste = [0, 0, 0, 0]
         ergebnis_liste: list[int] = []
         for idx, element in enumerate(self.geratene_zahl_liste):
 

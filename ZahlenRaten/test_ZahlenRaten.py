@@ -20,6 +20,14 @@ def test_wenn_nummer_nur_aus_einer_zahl(untergrenze, obergrenze):
     return 1111
 
 
+def test_bug(untergenze, obergerenze):
+    return 8064
+
+
+def test_bug2(untergenze, obergerenze):
+    return 8064
+
+
 class TestZahlenRaten(unittest.TestCase):
 
     def test_gleich_richttest_nummer_mit_zewi_gleichen_ziffernig_geraten(self):
@@ -118,6 +126,18 @@ class TestZahlenRaten(unittest.TestCase):
             zr = Zahlenraten()
             zr.raten(1011)
             self.assertEqual(zr.wie_viele_stimmen_ueber_ein(), 3)
+
+    def test_alles_null(self):
+        with mock.patch("random.randint", test_bug):
+            zr = Zahlenraten()
+            zr.raten(0000)
+            self.assertEqual(zr.passende_stellen(), [1])
+
+    def test_wenn_fuerende_nullen(self):
+        with mock.patch("random.randint", test_bug):
+            zr = Zahlenraten()
+            zr.raten(int("0003"))
+            self.assertEqual(zr.passende_stellen(), [1])
 
 
 if __name__ == "__main__":

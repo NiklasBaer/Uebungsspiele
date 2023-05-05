@@ -42,7 +42,6 @@ def Zahlcreate(Nummern):
             Zahlkorekt = not True
 
 
-
 def Raten(x, c):
 
     global Guess
@@ -192,22 +191,25 @@ def HinweisSpieler(Hinweis, Versuche):
     if Richtig == 0:
         print("Es ist keins Richtig.")
         print("Es ist keins an der Richtigen Stelle.")
-    
+
+
 Versuche = 0
 
 Zahlcreate(Nummern)
+
+
 def Spiel(Versuche):
     while winis == True:
         Raten(x, c)
         print(Guess)
-        print(Zahl)
         PrüfenWieVieleRichtig(Guess, Zahl)
         PrüfenWelcheRichtig(Guess)
         HinweisSpieler(Hinweis, Versuche)
         Versuche = Versuche + 1
-    
+
 
 Spiel(Versuche)
+
 
 def Spielerneut():
     global Erneut

@@ -26,12 +26,14 @@ def Hinzufügen():
                     d = not True
                     while f == 0:
                         if x:
-                            print("Ist " + Deutsch +" das Wort was du Hinzufügen willst?")
+                            print("Ist " + Deutsch +
+                                  " das Wort was du Hinzufügen willst?")
                             Sicher = input("(Y/N) ")
                             f = f + 1
                             while z:
                                 if Sicher == "y" or Sicher == "Y":
-                                    print("Das word wurde zur Deutschen Liste hinzugefügt.")
+                                    print(
+                                        "Das word wurde zur Deutschen Liste hinzugefügt.")
                                     z = not True
                                     Deutschl.append(Deutsch)
                                     print(Deutschl)
@@ -42,7 +44,8 @@ def Hinzufügen():
                                     Hinzufügen()
                                     z = not True
                                 else:
-                                    Sicher = input("Du musst Y oder N eingeben. ")
+                                    Sicher = input(
+                                        "Du musst Y oder N eingeben. ")
 
                 else:
                     print("Du must ein Wort eingeben.")
@@ -59,12 +62,14 @@ def Hinzufügen():
                     d = not True
                     while f == 0:
                         if x:
-                            print("Ist " + Englisch +" das Wort was du Hinzufügen willst?")
+                            print("Ist " + Englisch +
+                                  " das Wort was du Hinzufügen willst?")
                             Sicher = input("(Y/N) ")
                             f = f + 1
                             while z:
                                 if Sicher == "y" or Sicher == "Y":
-                                    print("Das word wurde zur Englisch Liste hinzugefügt.")
+                                    print(
+                                        "Das word wurde zur Englisch Liste hinzugefügt.")
                                     z = not True
                                     Englischl.append(Englisch)
                                     print(Englisch)
@@ -75,12 +80,12 @@ def Hinzufügen():
                                     Hinzufügen()
                                     z = not True
                                 else:
-                                    Sicher = input("Du musst Y oder N eingeben. ")
+                                    Sicher = input(
+                                        "Du musst Y oder N eingeben. ")
 
                 else:
                     print("Du must ein Wort eingeben.")
                     Englisch = input("> ")
-
 
         else:
             print("Du musst Deutsch oder Englisch wählen.")
@@ -95,12 +100,14 @@ def Hinzufügen():
                 d = not True
                 while f == 0:
                     if x:
-                        print("Ist " + Deutsch +" das Wort was du Hinzufügen willst?")
+                        print("Ist " + Deutsch +
+                              " das Wort was du Hinzufügen willst?")
                         Sicher = input("(Y/N) ")
                         f = f + 1
                         while z:
                             if Sicher == "y" or Sicher == "Y":
-                                print("Das word wurde zur Deutschen Liste hinzugefügt.")
+                                print(
+                                    "Das word wurde zur Deutschen Liste hinzugefügt.")
                                 z = not True
                                 Deutschl.append(Deutsch)
                                 print(Deutschl)
@@ -114,9 +121,6 @@ def Hinzufügen():
             else:
                 print("Du must ein Wort eingeben.")
                 Deutsch = input("> ")
-        
-
-
 
 
 def Trainieren():
